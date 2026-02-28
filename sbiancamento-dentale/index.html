@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sbiancamento Dentale Professionale — DentalTeam | Schio, Breganze, Fara Vicentino</title>
+  <meta name="description" content="Sbiancamento dentale professionale fino a 8 tonalità più bianco. Sicuro, indolore, risultato immediato. Prenota la consulenza e ricevi il tuo preventivo personalizzato.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #1AAA9E;
+      --teal-dark: #158F85;
+      --teal-light: #2BBDB1;
+      --mint-bg: #EBF2EF;
+      --mint-light: #F4F9F7;
+      --white: #FFFFFF;
+      --charcoal: #2D2D2D;
+      --gray-700: #444444;
+      --gray-500: #6B7280;
+      --gray-400: #9CA3AF;
+      --gray-200: #E5E7EB;
+      --gray-100: #F3F4F6;
+      --red-accent: #E74C3C;
+      --gold: #F59E0B;
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section--mint { background: var(--mint-bg); }
+    .section--white { background: var(--white); }
+    .section--dark { background: var(--charcoal); color: var(--white); }
+    .section--teal { background: var(--teal); color: var(--white); }
+    .text-center { text-align: center; }
+
+    .btn {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+    .btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,170,158,0.3); }
+    .btn--large { font-size: 18px; padding: 20px 48px; }
+    .btn--full { width: 100%; text-align: center; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(26,170,158,0.1);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+    .section-sub.centered { margin: 0 auto; }
+
+    /* ══════ TOPBAR ══════ */
+    .topbar {
+      background: var(--teal);
+      color: var(--white);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 16px;
+      letter-spacing: 0.02em;
+    }
+    .topbar strong { font-weight: 700; }
+
+    /* ══════ NAVBAR ══════ */
+    .navbar {
+      background: var(--white);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--charcoal);
+    }
+    .navbar-logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .navbar-logo-text span { color: var(--teal); }
+    .navbar-phone {
+      color: var(--teal);
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .navbar-phone:hover { color: var(--teal-dark); }
+
+    /* ══════ HERO ══════ */
+    .hero {
+      padding: 60px 0 80px;
+      background: linear-gradient(180deg, var(--white) 0%, var(--mint-light) 100%);
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .hero-content { padding-top: 20px; }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4.5vw, 46px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--charcoal);
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--teal);
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--gray-700);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .hero-bullets {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 24px 28px;
+      list-style: none;
+    }
+    .hero-bullets li {
+      font-size: 15px;
+      color: var(--gray-700);
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .hero-bullets li::before {
+      content: '✔';
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .hero-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+      border: 1px solid var(--gray-200);
+    }
+    .hero-form h3 {
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: var(--font-body);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--charcoal);
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(26,170,158,0.12);
+    }
+    .form-group input::placeholder { color: var(--gray-400); }
+    .form-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 20px 0 24px;
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+    .form-privacy input[type="checkbox"] { margin-top: 3px; accent-color: var(--teal); }
+    .form-privacy a { color: var(--teal); }
+    .form-urgency {
+      text-align: center;
+      font-size: 13px;
+      color: var(--red-accent);
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    /* ══════ FRUSTRATIONS ══════ */
+    .frust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .frust {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .frust:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(26,170,158,0.08); }
+    .frust-icon { font-size: 36px; margin-bottom: 12px; }
+    .frust h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .frust p { font-size: 14px; color: var(--gray-500); line-height: 1.55; }
+
+    /* ══════ PROBLEM BODY ══════ */
+    .problem-body {
+      font-size: 17px;
+      color: var(--gray-700);
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    /* ══════ CARDS ══════ */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+    }
+    .card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(26,170,158,0.08); transform: translateY(-2px); }
+    .card-icon {
+      width: 48px; height: 48px;
+      background: rgba(26,170,158,0.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .card-icon svg { width: 24px; height: 24px; color: var(--teal); }
+    .card h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .card p { font-size: 15px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ══════ COMPARISON ══════ */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .comparison-col {
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .comparison-col--bad { background: #FEF2F2; border: 1px solid #FECACA; }
+    .comparison-col--good { background: #ECFDF5; border: 2px solid var(--teal); }
+    .comparison-col h4 {
+      font-size: 17px; font-weight: 700; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .comparison-col--bad h4 { color: #DC2626; }
+    .comparison-col--good h4 { color: var(--teal-dark); }
+    .comparison-col ul { list-style: none; padding: 0; }
+    .comparison-col li {
+      font-size: 14px; padding: 6px 0;
+      display: flex; align-items: flex-start; gap: 8px; line-height: 1.5;
+    }
+    .comparison-col--bad li::before { content: '✗'; color: #DC2626; font-weight: 700; }
+    .comparison-col--good li::before { content: '✓'; color: var(--teal); font-weight: 700; }
+
+    /* ══════ BEFORE/AFTER VISUAL ══════ */
+    .results-visual {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .result-item {
+      text-align: center;
+    }
+    .result-item .result-number {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .result-item .result-label {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .result-item .result-desc {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* ══════ STATS ══════ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat { text-align: center; padding: 24px 16px; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 48px; font-weight: 700;
+      color: var(--teal); line-height: 1; margin-bottom: 8px;
+    }
+    .stat-label { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .stat-desc { font-size: 13px; color: var(--gray-500); }
+    .stat-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ══════ REVIEWS ══════ */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .review-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 16px; color: var(--white); flex-shrink: 0;
+    }
+    .review-name { font-weight: 600; font-size: 15px; }
+    .review-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
+    .review-text { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.8); }
+    .google-badge {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-top: 40px;
+      font-size: 14px; color: rgba(255,255,255,0.6);
+    }
+
+    /* ══════ PROCESS ══════ */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step { text-align: center; }
+    .step-number {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--teal); color: var(--white);
+      font-size: 22px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .step h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ══════ TEAM ══════ */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .team-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+    .team-content h3 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 700; margin-bottom: 16px; line-height: 1.25;
+    }
+    .team-content p { font-size: 16px; color: var(--gray-700); line-height: 1.7; }
+
+    /* ══════ CTA BLOCK ══════ */
+    .cta-block { padding: 72px 0; }
+    .cta-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .cta-inner .section-headline { margin-bottom: 12px; }
+    .cta-sub { font-size: 17px; color: var(--gray-700); margin-bottom: 32px; }
+    .section--teal .cta-sub { color: rgba(255,255,255,0.85); }
+    .section--teal .btn { background: var(--white); color: var(--teal); }
+    .section--teal .btn:hover { background: var(--mint-light); color: var(--teal-dark); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .cta-note { font-size: 14px; margin-top: 16px; opacity: 0.8; }
+
+    /* ══════ FAQ ══════ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .faq-item { border-bottom: 1px solid var(--gray-200); padding-bottom: 20px; }
+    .faq-q {
+      font-size: 16px; font-weight: 700; margin-bottom: 8px;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .faq-q::before {
+      content: ''; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--teal); flex-shrink: 0; margin-top: 7px;
+    }
+    .faq-a { font-size: 15px; color: var(--gray-500); line-height: 1.65; padding-left: 16px; }
+
+    /* ══════ LOCATIONS ══════ */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .location-card {
+      background: var(--white); border-radius: 12px;
+      overflow: hidden; border: 1px solid var(--gray-200);
+    }
+    .location-img { height: 180px; overflow: hidden; }
+    .location-info { padding: 24px; }
+    .location-info h4 { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+    .location-info p { font-size: 14px; color: var(--gray-500); line-height: 1.55; margin-bottom: 4px; }
+    .location-info a { color: var(--teal); text-decoration: none; font-size: 14px; }
+    .location-info a:hover { text-decoration: underline; }
+    .location-hours { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--gray-200); }
+    .location-hours span { font-size: 13px; color: var(--gray-500); }
+    .location-hours strong { font-size: 13px; font-weight: 600; }
+
+    /* ══════ FOOTER ══════ */
+    .footer {
+      background: var(--charcoal); color: rgba(255,255,255,0.5);
+      padding: 32px 0; font-size: 13px; text-align: center;
+    }
+    .footer a { color: var(--teal-light); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ══════ MOBILE BAR ══════ */
+    .mobile-bar {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+      padding: 10px 16px;
+    }
+    .mobile-bar-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      max-width: 480px; margin: 0 auto;
+    }
+    .mobile-bar a {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 12px; border-radius: 10px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 700;
+      text-decoration: none; transition: all 0.2s ease;
+    }
+    .mobile-bar-call { background: var(--teal); color: var(--white); }
+    .mobile-bar-call:hover { background: var(--teal-dark); }
+    .mobile-bar-wa { background: #25D366; color: var(--white); }
+    .mobile-bar-wa:hover { background: #1EBE5A; }
+    .mobile-bar a svg { flex-shrink: 0; }
+
+    @media (max-width: 900px) {
+      .mobile-bar { display: block; }
+      body { padding-bottom: 76px; }
+      .footer { padding-bottom: 80px; }
+      .hero .container { grid-template-columns: 1fr; }
+      .hero-content { order: 2; padding-top: 0; }
+      .hero-form { order: 1; }
+      .frust-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .comparison { grid-template-columns: 1fr; }
+      .results-visual { grid-template-columns: 1fr; gap: 16px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .locations-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 56px 0; }
+      .hero { padding: 32px 0 48px; }
+      .hero-form { padding: 28px 20px; }
+      .navbar-phone { font-size: 16px; }
+      .stat-number { font-size: 36px; }
+      .result-item .result-number { font-size: 42px; }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+
+    /* ══════ ANIMATIONS ══════ */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ══════ TOPBAR ══════ -->
+<div class="topbar">
+  Ambulatori odontoiatrici <strong>Breganze</strong> / <strong>Fara Vicentino</strong> / <strong>Schio</strong>
+</div>
+
+<!-- ══════ NAVBAR ══════ -->
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="navbar-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="18" fill="#1AAA9E"/>
+        <path d="M18 8c-2.5 0-4 1.5-4 3.5 0 1 .3 1.8.8 2.5-.5.7-.8 1.5-.8 2.5 0 3 2 10 4 15.5 2-5.5 4-12.5 4-15.5 0-1-.3-1.8-.8-2.5.5-.7.8-1.5.8-2.5 0-2-1.5-3.5-4-3.5z" fill="white"/>
+      </svg>
+      <span class="navbar-logo-text">DENTAL<span>TEAM</span></span>
+    </a>
+    <a href="tel:+393928345388" class="navbar-phone">+39 392 834 5388</a>
+  </div>
+</nav>
+
+<!-- ══════ HERO — ATTENTION ══════ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content fade-up">
+      <div class="badge">Sbiancamento dentale professionale</div>
+      <h1 class="hero-headline">
+        Sorridi senza pensarci.<br>
+        Con i denti che <em>avresti sempre voluto.</em>
+      </h1>
+      <p class="hero-sub">
+        Dentifrici sbiancanti, strisce, kit online — hai già provato tutto. Il risultato? Sempre lo stesso. Lo sbiancamento professionale è un'altra cosa: <strong>fino a 8 tonalità più bianco, in sicurezza, con risultato visibile dalla prima seduta.</strong>
+      </p>
+      <ul class="hero-bullets">
+        <li>Trattamento supervisionato da dentista — zero rischi per lo smalto</li>
+        <li>Risultato visibile dalla prima seduta</li>
+        <li>Preventivo personalizzato — nessun costo nascosto</li>
+        <li>Pagamento anche in comode rate a tasso zero</li>
+        <li>3 sedi nel vicentino — scegli la più comoda</li>
+      </ul>
+      <div style="margin-top:24px;border-radius:12px;overflow:hidden;max-height:200px;">
+        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=700&q=80&fit=crop&crop=faces" alt="Sorriso bianco e luminoso" style="width:100%;height:200px;object-fit:cover;object-position:center 30%;">
+      </div>
+    </div>
+
+    <div class="hero-form fade-up" style="transition-delay:0.15s">
+      <h3>Prenota la consulenza sbiancamento.<br>Ti chiamiamo noi per fissare l'appuntamento.</h3>
+      <form id="leadForm" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Numero di telefono *</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Il tuo numero di telefono" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="La tua email" required>
+        </div>
+        <div class="form-group">
+          <label for="obiettivo">Cosa vorresti ottenere?</label>
+          <select id="obiettivo" name="obiettivo">
+            <option value="macchie">Rimuovere macchie da caffè/tè/fumo</option>
+            <option value="giallo">I miei denti sono ingialliti col tempo</option>
+            <option value="evento">Vorrei sbiancare per un'occasione speciale</option>
+            <option value="faidate">Ho provato kit fai-da-te senza risultati</option>
+            <option value="info">Voglio informazioni generali</option>
+          </select>
+        </div>
+        <div class="form-privacy">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">Accetto la <a href="#">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="btn btn--full btn--large">Prenota la Consulenza — Ti Richiamiamo Oggi</button>
+        <p class="form-urgency">* Posti limitati ogni settimana</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FRUSTRATIONS — "Ti riconosci?" ══════ -->
+<section class="section section--mint" id="frustrazioni">
+  <div class="container text-center">
+    <div class="fade-up">
+      <div class="badge">Suona familiare?</div>
+      <h2 class="section-headline">Hai provato di tutto. E i tuoi denti sono ancora gialli.</h2>
+      <p class="section-sub centered">Non è colpa tua. I prodotti da supermercato non possono fare quello che fa un trattamento professionale.</p>
+    </div>
+    <div class="frust-grid fade-up" style="transition-delay:0.1s">
+      <div class="frust">
+        <div class="frust-icon">🪥</div>
+        <h4>Dentifrici "sbiancanti"</h4>
+        <p>Promettono miracoli. In realtà sono abrasivi che graffiano lo smalto senza cambiare il colore di base del dente.</p>
+      </div>
+      <div class="frust">
+        <div class="frust-icon">📦</div>
+        <h4>Kit e strisce online</h4>
+        <p>Concentrazioni troppo basse per funzionare davvero, oppure troppo alte e danneggiano gengive e smalto. Senza controllo medico.</p>
+      </div>
+      <div class="frust">
+        <div class="frust-icon">☕</div>
+        <h4>Caffè, tè, vino, fumo</h4>
+        <p>La vita quotidiana macchia i denti ogni giorno. Senza un trattamento professionale, il colore può solo peggiorare.</p>
+      </div>
+      <div class="frust">
+        <div class="frust-icon">📸</div>
+        <h4>Foto con la bocca chiusa</h4>
+        <p>Ti rivedi nelle foto e il sorriso non ti piace. Inizi a sorridere a labbra chiuse. A evitare certe angolazioni.</p>
+      </div>
+      <div class="frust">
+        <div class="frust-icon">⏳</div>
+        <h4>"Lo faccio l'anno prossimo"</h4>
+        <p>Rimandi perché non sai quanto costa, se fa male, o se funziona davvero. Intanto il colore peggiora.</p>
+      </div>
+      <div class="frust">
+        <div class="frust-icon">😬</div>
+        <h4>"Paura di rovinare lo smalto"</h4>
+        <p>Il mito più diffuso. Lo sbiancamento professionale, fatto da un dentista, non danneggia lo smalto. Punto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROBLEM — AGITAZIONE ══════ -->
+<section class="section section--white" id="problema">
+  <div class="container text-center">
+    <div class="fade-up">
+      <h2 class="section-headline">Il colore dei tuoi denti non migliora da solo.<br>Peggiora.</h2>
+    </div>
+    <div class="problem-body fade-up" style="transition-delay:0.1s">
+      <p style="margin-bottom:16px;">
+        Ogni caffè, ogni bicchiere di vino, ogni sigaretta deposita pigmenti sullo smalto. Anno dopo anno, il giallo si accumula. Lo spazzolino rimuove la placca, non le macchie profonde.
+      </p>
+      <p style="margin-bottom:16px;">
+        I prodotti da banco? Non hanno la concentrazione necessaria per penetrare lo smalto in sicurezza. Quelli troppo aggressivi rischiano di sensibilizzare i denti e irritare le gengive — <strong>senza nemmeno sbiancare davvero.</strong>
+      </p>
+      <p>
+        Lo sbiancamento professionale funziona perché il principio attivo, la concentrazione e il tempo di posa sono calibrati dal dentista <strong>sul tuo caso specifico</strong>. Niente improvvisazione. Solo risultato.
+      </p>
+    </div>
+
+    <div style="margin:0 auto 48px;max-width:720px;border-radius:16px;overflow:hidden;" class="fade-up">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&q=80&fit=crop&crop=center" alt="Trattamento sbiancamento dentale professionale" style="width:100%;height:280px;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SOLUTION — COME FUNZIONA ══════ -->
+<section class="section section--mint" id="soluzione">
+  <div class="container text-center">
+    <div class="fade-up">
+      <div class="badge">La soluzione</div>
+      <h2 class="section-headline">Sbiancamento professionale:<br>sicuro, veloce, reale.</h2>
+      <p class="section-sub centered">Valutiamo il tuo caso e scegliamo insieme il trattamento più adatto — in studio, domiciliare, o combinato.</p>
+    </div>
+    <div class="cards-grid fade-up" style="transition-delay:0.1s;margin-top:40px;">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </div>
+        <h4>Sbiancamento in Studio</h4>
+        <p>Trattamento con lampada o laser professionale. Risultato immediato in una seduta da 60-90 minuti. Fino a 8 tonalità più bianco.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Sbiancamento Domiciliare</h4>
+        <p>Mascherine personalizzate + gel professionale da usare a casa. Risultato graduale in 10-14 giorni, con il massimo comfort.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Sicurezza Garantita</h4>
+        <p>Lo sbiancamento professionale non danneggia lo smalto. Gel, tempi e concentrazioni sono controllati dal dentista. Nessun rischio.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h4>Risultato Naturale</h4>
+        <p>Niente effetto "bianco frigorifero". Il colore viene calibrato per un risultato luminoso ma naturale, coerente con il tuo viso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ COMPARISON — FAI-DA-TE vs PROFESSIONALE ══════ -->
+<section class="section section--white">
+  <div class="container text-center">
+    <div class="fade-up">
+      <h2 class="section-headline">Fai-da-te vs. Professionale.<br>La differenza è nei risultati.</h2>
+    </div>
+    <div class="comparison fade-up" style="transition-delay:0.1s">
+      <div class="comparison-col comparison-col--bad">
+        <h4>✗ Kit fai-da-te / farmacia</h4>
+        <ul>
+          <li>Concentrazione insufficiente o non controllata</li>
+          <li>Mascherine generiche che non aderiscono</li>
+          <li>Rischio di irritazione a gengive e smalto</li>
+          <li>Risultato minimo e temporaneo</li>
+          <li>Nessuna valutazione medica preventiva</li>
+        </ul>
+      </div>
+      <div class="comparison-col comparison-col--good">
+        <h4>✓ Sbiancamento professionale (DentalTeam)</h4>
+        <ul>
+          <li>Concentrazione calibrata sul tuo caso</li>
+          <li>Mascherine su impronta o trattamento in studio</li>
+          <li>Gengive protette, smalto preservato</li>
+          <li>Fino a 8 tonalità più bianco, durata mesi</li>
+          <li>Visita preventiva + piano personalizzato</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ RESULTS ══════ -->
+<section class="section section--mint">
+  <div class="container text-center">
+    <div class="fade-up">
+      <div class="badge">Risultati reali</div>
+      <h2 class="section-headline">Cosa puoi aspettarti.</h2>
+    </div>
+    <div class="results-visual fade-up" style="transition-delay:0.1s">
+      <div class="result-item">
+        <div class="result-number">8</div>
+        <div class="result-label">Tonalità più bianco</div>
+        <div class="result-desc">Risultato massimo ottenibile con sbiancamento in studio</div>
+      </div>
+      <div class="result-item">
+        <div class="result-number">1</div>
+        <div class="result-label">Seduta</div>
+        <div class="result-desc">Per lo sbiancamento in studio — 60/90 minuti e il risultato è visibile</div>
+      </div>
+      <div class="result-item">
+        <div class="result-number">12+</div>
+        <div class="result-label">Mesi di durata</div>
+        <div class="result-desc">Con corretta manutenzione e igiene, il risultato dura oltre un anno</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CREDIBILITY ══════ -->
+<section class="section section--white" id="credibilita">
+  <div class="container">
+    <h2 class="section-headline text-center fade-up" style="margin-bottom:48px;">Non siamo nati ieri.<br>E 10.000 pazienti lo confermano.</h2>
+    <div class="stats-grid fade-up" style="transition-delay:0.1s">
+      <div class="stat">
+        <div class="stat-number">+35</div>
+        <div class="stat-label">Anni di Esperienza</div>
+        <div class="stat-desc">Al servizio del tuo sorriso dal 1989</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="4" stroke="#1AAA9E" stroke-width="2.5"/><path d="M24 18v12M18 24h12" stroke="#1AAA9E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="stat-label">Certificazioni UNI EN</div>
+        <div class="stat-desc">Standard europei di qualità e sicurezza</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">+10k</div>
+        <div class="stat-label">Pazienti Curati</div>
+        <div class="stat-desc">Con serietà, trasparenza e zero sorprese</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 4l4 8 9 1.3-6.5 6.3 1.5 8.9L24 24l-8 4.5 1.5-8.9L11 13.3l9-1.3z" stroke="#1AAA9E" stroke-width="2.5" stroke-linejoin="round"/><rect x="6" y="32" width="36" height="8" rx="2" stroke="#1AAA9E" stroke-width="2"/></svg>
+        </div>
+        <div class="stat-label">Accreditati ARSS</div>
+        <div class="stat-desc">Riconosciuti dal sistema sanitario regionale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ REVIEWS ══════ -->
+<section class="section section--dark" id="recensioni">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="badge" style="background:rgba(26,170,158,0.2)">Recensioni verificate</div>
+      <h2 class="section-headline" style="color:var(--white)">Non crederci sulla parola. Leggili.</h2>
+    </div>
+    <div class="reviews-grid fade-up" style="transition-delay:0.1s">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">R</div>
+          <div><div class="review-name">Raffaele Meschino</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Il mio giudizio è positivo sia per quanto riguarda l'igiene dentale sia per quanto concerne le cure odontoiatriche. Il personale è gentile e preparato.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Stefano Seganfreddo</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Personale preparato e attento, attrezzature di ultima generazione, consigliatissimo!</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">E</div>
+          <div><div class="review-name">Elena Beltramello</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Bravissimi! Medici preparati e le ragazze disponibilissime! Ottimo per tutti quelli che hanno previmedical!</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">H</div>
+          <div><div class="review-name">Helen Galvan</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Bravissimi! Mi hanno seguita con pazienza e gentilezza. Puntuali, gentili e disponibili!</p>
+      </div>
+    </div>
+    <div class="google-badge fade-up">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      Recensioni verificate su Google
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROCESS ══════ -->
+<section class="section section--white" id="processo">
+  <div class="container text-center">
+    <div class="fade-up">
+      <div class="badge">Il percorso</div>
+      <h2 class="section-headline">Dal primo contatto al sorriso nuovo: 4 passi.</h2>
+    </div>
+    <div class="process-steps fade-up" style="transition-delay:0.1s">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Ti richiamiamo</h4>
+        <p>Compili il form, ti contattiamo in giornata per fissare la consulenza nella sede più comoda.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Consulenza personalizzata</h4>
+        <p>Valutiamo il colore attuale dei denti, lo stato dello smalto e delle gengive. Scegliamo insieme il trattamento.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Preventivo su misura</h4>
+        <p>Ricevi un preventivo chiaro basato sul trattamento scelto. Nessuna sorpresa, pagamento anche a rate.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h4>Sorriso nuovo</h4>
+        <p>In studio il risultato è immediato. Con le mascherine, in 10-14 giorni. In entrambi i casi: sorriso luminoso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TEAM ══════ -->
+<section class="section section--mint" id="team">
+  <div class="container">
+    <div class="team-grid fade-up">
+      <div class="team-img">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&fit=crop&crop=faces" alt="Team odontoiatrico DentalTeam" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="team-content">
+        <h3>Il tuo sorriso è in buone mani.</h3>
+        <p style="margin-bottom:16px;">
+          Siamo odontoiatri, igienisti e assistenti che lavorano insieme da anni con una regola semplice: prima capiamo cosa vuoi ottenere, poi ti proponiamo il percorso giusto.
+        </p>
+        <p>
+          Lo sbiancamento non è uguale per tutti. Ogni bocca ha il suo colore di partenza, le sue caratteristiche, la sua sensibilità. <strong>Per questo non esistono soluzioni preconfezionate — solo piani personalizzati.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ OFFER CTA ══════ -->
+<section class="section section--teal cta-block" id="offerta">
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <h2 class="section-headline" style="color:var(--white)">Tra sorridere a labbra chiuse<br>e sorridere senza pensarci,<br>c'è una consulenza.</h2>
+      <p class="cta-sub">Prenota la consulenza sbiancamento. Scopri il trattamento adatto a te.<br>Preventivo personalizzato, senza vincoli.</p>
+      <a href="#top" class="btn btn--large">Prenota la Consulenza — Ti Richiamiamo Oggi</a>
+      <p class="cta-note">Pagamento anche in comode rate a tasso zero. Posti limitati.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FAQ ══════ -->
+<section class="section section--white" id="faq">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-headline">Domande sullo sbiancamento? Risposte chiare.</h2>
+    </div>
+    <div class="faq-grid fade-up" style="transition-delay:0.1s">
+      <div class="faq-item">
+        <div class="faq-q">Lo sbiancamento rovina lo smalto?</div>
+        <p class="faq-a">No. Lo sbiancamento professionale utilizza gel a base di perossido in concentrazioni controllate. Lo smalto non viene intaccato. È un trattamento sicuro e ampiamente documentato.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Fa male?</div>
+        <p class="faq-a">No. Potresti avvertire una leggera sensibilità temporanea nelle prime 24-48 ore — del tutto normale e gestibile. Se hai denti sensibili, adattiamo il protocollo.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto dura il risultato?</div>
+        <p class="faq-a">Da 6 a 18 mesi, a seconda delle abitudini (caffè, fumo, vino). Con una buona igiene e un ritocco periodico, il risultato si mantiene a lungo.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto costa?</div>
+        <p class="faq-a">Dipende dal tipo di trattamento (studio, domiciliare o combinato). Per questo facciamo prima una consulenza gratuita e poi ti forniamo un preventivo personalizzato.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">I denti diventeranno "bianco frigorifero"?</div>
+        <p class="faq-a">No. Calibriamo il trattamento per un risultato luminoso ma naturale, coerente con il colore della tua pelle e del tuo viso. L'obiettivo è un sorriso bello, non artificiale.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Posso fare lo sbiancamento se ho otturazioni o corone?</div>
+        <p class="faq-a">Lo sbiancamento agisce solo sui denti naturali. Per questo è importante la consulenza: valutiamo la situazione e ti proponiamo il piano migliore per un risultato uniforme.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Posso pagare a rate?</div>
+        <p class="faq-a">Sì. Offriamo la possibilità di pagare in comode rate a tasso zero. Ne parliamo durante la consulenza.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Devo fare la pulizia prima dello sbiancamento?</div>
+        <p class="faq-a">Sì, è consigliato. Rimuovere tartaro e placca prima del trattamento garantisce un risultato più uniforme e duraturo. Possiamo farla nella stessa sede.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ LOCATIONS ══════ -->
+<section class="section section--mint" id="sedi">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-headline">Tre ambulatori. Un unico standard.</h2>
+    </div>
+    <div class="locations-grid fade-up" style="transition-delay:0.1s">
+      <div class="location-card">
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1629909615957-be67d954edaf?w=600&q=80&fit=crop" alt="Sede Schio" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="location-info">
+          <h4>Schio — presso CampuSalute</h4>
+          <p>36015 via Milano 29</p>
+          <a href="mailto:schio@ambulatoridentalteam.it">schio@ambulatoridentalteam.it</a>
+          <div class="location-hours">
+            <strong>Orari:</strong><br>
+            <span>Lun.–Ven. 08:30–20:00</span><br>
+            <span>Sab. 08:30–13:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1631248055158-edec7a3c072b?w=600&q=80&fit=crop" alt="Sede Breganze" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="location-info">
+          <h4>Breganze</h4>
+          <p>36042 piazza Autieri 1</p>
+          <a href="mailto:breganze@ambulatoridentalteam.it">breganze@ambulatoridentalteam.it</a>
+          <div class="location-hours">
+            <strong>Orari:</strong><br>
+            <span>Lun.–Ven. 08:30–20:00</span><br>
+            <span>Sab. 08:30–13:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80&fit=crop" alt="Sede Fara Vicentino" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="location-info">
+          <h4>Fara Vicentino</h4>
+          <p>36030 via Verdi 33</p>
+          <a href="mailto:fara@ambulatoridentalteam.it">fara@ambulatoridentalteam.it</a>
+          <div class="location-hours">
+            <strong>Orari:</strong><br>
+            <span>Lun.–Ven. 08:30–20:00</span><br>
+            <span>Sab. 08:30–13:30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINAL CTA ══════ -->
+<section class="section section--white cta-block" id="finale">
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <h2 class="section-headline">Il sorriso che vuoi è a una consulenza di distanza.</h2>
+      <p class="cta-sub" style="color:var(--gray-700);">Prenota la consulenza sbiancamento. Scopri il piano adatto a te.<br>Preventivo personalizzato, senza vincoli.</p>
+      <a href="#top" class="btn btn--large">Prenota la Consulenza — Ci Vogliono 20 Secondi</a>
+      <p class="cta-note" style="color:var(--gray-500);">Nessun obbligo. Ti richiamiamo oggi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer class="footer">
+  <div class="container">
+    <p style="margin-bottom:6px;">CAMPUSALUTE S.r.l | P.IVA 02802650248 | Via Milano, 29 - 36015 Schio (VI)</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></p>
+  </div>
+</footer>
+
+<!-- ══════ MOBILE STICKY BAR ══════ -->
+<div class="mobile-bar">
+  <div class="mobile-bar-inner">
+    <a href="tel:+393928345388" class="mobile-bar-call">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Chiama Ora
+    </a>
+    <a href="https://wa.me/393928345388?text=Ciao%2C%20vorrei%20informazioni%20sullo%20sbiancamento%20dentale" target="_blank" rel="noopener noreferrer" class="mobile-bar-wa">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ══════ SCRIPTS ══════ -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
+    btn.style.background = '#158F85';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+
+  document.querySelectorAll('a[href="#top"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('nome').focus(), 600);
+    });
+  });
+</script>
+
+</body>
+</html>

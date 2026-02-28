@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bite Dentale Su Misura — DentalTeam | Schio, Breganze, Fara Vicentino</title>
+  <meta name="description" content="Digrigni i denti di notte? Mal di testa al risveglio? Il bite su misura protegge i tuoi denti e ti restituisce il sonno. Visita specialistica e preventivo personalizzato — prenota ora.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #1AAA9E;
+      --teal-dark: #158F85;
+      --teal-light: #2BBDB1;
+      --mint-bg: #EBF2EF;
+      --mint-light: #F4F9F7;
+      --white: #FFFFFF;
+      --charcoal: #2D2D2D;
+      --gray-700: #444444;
+      --gray-500: #6B7280;
+      --gray-400: #9CA3AF;
+      --gray-200: #E5E7EB;
+      --gray-100: #F3F4F6;
+      --red-accent: #E74C3C;
+      --gold: #F59E0B;
+      --font-body: 'DM Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section--mint { background: var(--mint-bg); }
+    .section--white { background: var(--white); }
+    .section--dark { background: var(--charcoal); color: var(--white); }
+    .section--teal { background: var(--teal); color: var(--white); }
+    .text-center { text-align: center; }
+
+    .btn {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+    .btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,170,158,0.3); }
+    .btn--large { font-size: 18px; padding: 20px 48px; }
+    .btn--full { width: 100%; text-align: center; }
+
+    .badge {
+      display: inline-block;
+      background: rgba(26,170,158,0.1);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 17px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+    .section-sub.centered { margin: 0 auto; }
+
+    /* ══════ TOPBAR ══════ */
+    .topbar {
+      background: var(--teal);
+      color: var(--white);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 16px;
+      letter-spacing: 0.02em;
+    }
+    .topbar strong { font-weight: 700; }
+
+    /* ══════ NAVBAR ══════ */
+    .navbar {
+      background: var(--white);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--charcoal);
+    }
+    .navbar-logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .navbar-logo-text span { color: var(--teal); }
+    .navbar-phone {
+      color: var(--teal);
+      font-size: 20px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .navbar-phone:hover { color: var(--teal-dark); }
+
+    /* ══════ HERO ══════ */
+    .hero {
+      padding: 60px 0 80px;
+      background: linear-gradient(180deg, var(--white) 0%, var(--mint-light) 100%);
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .hero-content { padding-top: 20px; }
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4.5vw, 46px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--charcoal);
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--teal);
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--gray-700);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .hero-bullets {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 24px 28px;
+      list-style: none;
+    }
+    .hero-bullets li {
+      font-size: 15px;
+      color: var(--gray-700);
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .hero-bullets li::before {
+      content: '✔';
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .hero-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+      border: 1px solid var(--gray-200);
+    }
+    .hero-form h3 {
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-family: var(--font-body);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--charcoal);
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(26,170,158,0.12);
+    }
+    .form-group input::placeholder { color: var(--gray-400); }
+    .form-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 20px 0 24px;
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+    .form-privacy input[type="checkbox"] { margin-top: 3px; accent-color: var(--teal); }
+    .form-privacy a { color: var(--teal); }
+    .form-urgency {
+      text-align: center;
+      font-size: 13px;
+      color: var(--red-accent);
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    /* ══════ SYMPTOMS ══════ */
+    .symptoms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .symptom {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .symptom:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(26,170,158,0.08); }
+    .symptom-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .symptom h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .symptom p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.55;
+    }
+
+    /* ══════ PROBLEM BODY ══════ */
+    .problem-body {
+      font-size: 17px;
+      color: var(--gray-700);
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+
+    /* ══════ CARDS ══════ */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+    }
+    .card:hover { border-color: var(--teal); box-shadow: 0 4px 20px rgba(26,170,158,0.08); transform: translateY(-2px); }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(26,170,158,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .card-icon svg { width: 24px; height: 24px; color: var(--teal); }
+    .card h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .card p { font-size: 15px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ══════ COMPARISON ══════ */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .comparison-col {
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .comparison-col--bad {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+    }
+    .comparison-col--good {
+      background: #ECFDF5;
+      border: 2px solid var(--teal);
+    }
+    .comparison-col h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .comparison-col--bad h4 { color: #DC2626; }
+    .comparison-col--good h4 { color: var(--teal-dark); }
+    .comparison-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .comparison-col li {
+      font-size: 14px;
+      padding: 6px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+    .comparison-col--bad li::before { content: '✗'; color: #DC2626; font-weight: 700; }
+    .comparison-col--good li::before { content: '✓'; color: var(--teal); font-weight: 700; }
+
+    /* ══════ STATS ══════ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .stat { text-align: center; padding: 24px 16px; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .stat-desc { font-size: 13px; color: var(--gray-500); }
+    .stat-icon {
+      width: 56px; height: 56px;
+      margin: 0 auto 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ══════ REVIEWS ══════ */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .review-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .review-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 16px; color: var(--white);
+      flex-shrink: 0;
+    }
+    .review-name { font-weight: 600; font-size: 15px; }
+    .review-stars { color: var(--gold); font-size: 14px; letter-spacing: 2px; }
+    .review-text { font-size: 14px; line-height: 1.6; color: rgba(255,255,255,0.8); }
+    .google-badge {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-top: 40px;
+      font-size: 14px; color: rgba(255,255,255,0.6);
+    }
+
+    /* ══════ PROCESS ══════ */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step { text-align: center; }
+    .step-number {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 22px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .step h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+
+    /* ══════ TEAM ══════ */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .team-img {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .team-content h3 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .team-content p { font-size: 16px; color: var(--gray-700); line-height: 1.7; }
+
+    /* ══════ CTA BLOCK ══════ */
+    .cta-block { padding: 72px 0; }
+    .cta-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .cta-inner .section-headline { margin-bottom: 12px; }
+    .cta-sub { font-size: 17px; color: var(--gray-700); margin-bottom: 32px; }
+    .section--teal .cta-sub { color: rgba(255,255,255,0.85); }
+    .section--teal .btn { background: var(--white); color: var(--teal); }
+    .section--teal .btn:hover { background: var(--mint-light); color: var(--teal-dark); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .cta-note { font-size: 14px; margin-top: 16px; opacity: 0.8; }
+
+    /* ══════ FAQ ══════ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .faq-item { border-bottom: 1px solid var(--gray-200); padding-bottom: 20px; }
+    .faq-q {
+      font-size: 16px; font-weight: 700; margin-bottom: 8px;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .faq-q::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .faq-a { font-size: 15px; color: var(--gray-500); line-height: 1.65; padding-left: 16px; }
+
+    /* ══════ LOCATIONS ══════ */
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .location-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+    .location-img { height: 180px; overflow: hidden; }
+    .location-info { padding: 24px; }
+    .location-info h4 { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+    .location-info p { font-size: 14px; color: var(--gray-500); line-height: 1.55; margin-bottom: 4px; }
+    .location-info a { color: var(--teal); text-decoration: none; font-size: 14px; }
+    .location-info a:hover { text-decoration: underline; }
+    .location-hours { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--gray-200); }
+    .location-hours span { font-size: 13px; color: var(--gray-500); }
+    .location-hours strong { font-size: 13px; font-weight: 600; }
+
+    /* ══════ FOOTER ══════ */
+    .footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      padding: 32px 0;
+      font-size: 13px;
+      text-align: center;
+    }
+    .footer a { color: var(--teal-light); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ══════ MOBILE BAR ══════ */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--white);
+      border-top: 1px solid var(--gray-200);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+      padding: 10px 16px;
+    }
+    .mobile-bar-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .mobile-bar a {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 12px;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 15px; font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .mobile-bar-call { background: var(--teal); color: var(--white); }
+    .mobile-bar-call:hover { background: var(--teal-dark); }
+    .mobile-bar-wa { background: #25D366; color: var(--white); }
+    .mobile-bar-wa:hover { background: #1EBE5A; }
+    .mobile-bar a svg { flex-shrink: 0; }
+
+    @media (max-width: 900px) {
+      .mobile-bar { display: block; }
+      body { padding-bottom: 76px; }
+      .footer { padding-bottom: 80px; }
+      .hero .container { grid-template-columns: 1fr; }
+      .hero-content { order: 2; padding-top: 0; }
+      .hero-form { order: 1; }
+      .symptoms-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .comparison { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .locations-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 56px 0; }
+      .hero { padding: 32px 0 48px; }
+      .hero-form { padding: 28px 20px; }
+      .navbar-phone { font-size: 16px; }
+      .stat-number { font-size: 36px; }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+
+    /* ══════ ANIMATIONS ══════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ══════ TOPBAR ══════ -->
+<div class="topbar">
+  Ambulatori odontoiatrici <strong>Breganze</strong> / <strong>Fara Vicentino</strong> / <strong>Schio</strong>
+</div>
+
+<!-- ══════ NAVBAR ══════ -->
+<nav class="navbar">
+  <div class="container">
+    <a href="/" class="navbar-logo">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="18" fill="#1AAA9E"/>
+        <path d="M18 8c-2.5 0-4 1.5-4 3.5 0 1 .3 1.8.8 2.5-.5.7-.8 1.5-.8 2.5 0 3 2 10 4 15.5 2-5.5 4-12.5 4-15.5 0-1-.3-1.8-.8-2.5.5-.7.8-1.5.8-2.5 0-2-1.5-3.5-4-3.5z" fill="white"/>
+      </svg>
+      <span class="navbar-logo-text">DENTAL<span>TEAM</span></span>
+    </a>
+    <a href="tel:+393928345388" class="navbar-phone">+39 392 834 5388</a>
+  </div>
+</nav>
+
+<!-- ══════ HERO — ATTENTION ══════ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-content fade-up">
+      <div class="badge">Bite dentale su misura</div>
+      <h1 class="hero-headline">
+        Ti svegli con mal di testa?<br>
+        Potrebbe essere colpa <em>dei tuoi denti.</em>
+      </h1>
+      <p class="hero-sub">
+        Il bruxismo — digrignare i denti di notte — causa mal di testa, dolore alla mandibola e danni permanenti allo smalto. Il bite su misura lo ferma. <strong>Prenota la visita specialistica e ricevi il tuo preventivo personalizzato.</strong>
+      </p>
+      <ul class="hero-bullets">
+        <li>Bite realizzato su impronta individuale — non un prodotto generico</li>
+        <li>Visita specialistica con diagnosi completa</li>
+        <li>Preventivo chiaro, senza sorprese</li>
+        <li>Pagamento anche in comode rate a tasso zero</li>
+        <li>3 sedi nel vicentino — scegli la più comoda</li>
+      </ul>
+      <div style="margin-top:24px;border-radius:12px;overflow:hidden;max-height:200px;">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=700&q=80&fit=crop" alt="Bite dentale trasparente su misura" style="width:100%;height:200px;object-fit:cover;object-position:center 60%;">
+      </div>
+    </div>
+
+    <div class="hero-form fade-up" style="transition-delay: 0.15s">
+      <h3>Prenota la visita specialistica.<br>Ti chiamiamo noi per fissare l'appuntamento.</h3>
+      <form id="leadForm" onsubmit="return handleSubmit(event)">
+        <div class="form-group">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Numero di telefono *</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Il tuo numero di telefono" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="La tua email" required>
+        </div>
+        <div class="form-group">
+          <label for="sintomo">Qual è il tuo fastidio principale?</label>
+          <select id="sintomo" name="sintomo">
+            <option value="bruxismo">Digrigno i denti di notte</option>
+            <option value="mal_testa">Mi sveglio con mal di testa</option>
+            <option value="mandibola">Dolore o click alla mandibola</option>
+            <option value="denti_consumati">Ho i denti consumati o scheggiati</option>
+            <option value="partner">Il mio partner sente il digrignamento</option>
+            <option value="altro">Altro / Voglio informazioni</option>
+          </select>
+        </div>
+        <div class="form-privacy">
+          <input type="checkbox" id="privacy" required>
+          <label for="privacy">Accetto la <a href="#">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="btn btn--full btn--large">Prenota la Visita — Ti Richiamiamo Oggi</button>
+        <p class="form-urgency">* Posti limitati ogni settimana</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SYMPTOMS — "Ti riconosci?" ══════ -->
+<section class="section section--mint" id="sintomi">
+  <div class="container text-center">
+    <div class="fade-up">
+      <div class="badge">Ti riconosci?</div>
+      <h2 class="section-headline">6 segnali che stai digrignando i denti senza saperlo.</h2>
+      <p class="section-sub centered" style="margin-bottom:8px;">Il bruxismo colpisce 1 persona su 5. La maggior parte non lo sa — finché i danni non diventano visibili.</p>
+    </div>
+    <div class="symptoms-grid fade-up" style="transition-delay:0.1s">
+      <div class="symptom">
+        <div class="symptom-icon">😣</div>
+        <h4>Mal di testa al risveglio</h4>
+        <p>Cefalea tensiva ricorrente, soprattutto alle tempie e alla fronte. Spesso scambiata per stress.</p>
+      </div>
+      <div class="symptom">
+        <div class="symptom-icon">😬</div>
+        <h4>Mandibola che scricchiola</h4>
+        <p>Click, scatti o dolore quando apri la bocca, sbadigli o mastichi. Segnale classico di sovraccarico.</p>
+      </div>
+      <div class="symptom">
+        <div class="symptom-icon">🦷</div>
+        <h4>Denti consumati o scheggiati</h4>
+        <p>Lo smalto si assottiglia, i denti si accorciano, compaiono crepe. Danni lenti ma irreversibili.</p>
+      </div>
+      <div class="symptom">
+        <div class="symptom-icon">😴</div>
+        <h4>Sonno disturbato</h4>
+        <p>Ti svegli stanco anche dopo 8 ore. Il digrignamento impedisce al corpo di riposare davvero.</p>
+      </div>
+      <div class="symptom">
+        <div class="symptom-icon">👂</div>
+        <h4>Dolore a orecchio e collo</h4>
+        <p>Tensione che si irradia dalla mandibola al collo e alle orecchie. Spesso confusa con otite o cervicale.</p>
+      </div>
+      <div class="symptom">
+        <div class="symptom-icon">🗣️</div>
+        <h4>Il partner sente il rumore</h4>
+        <p>"Digrigni i denti di notte." Se te l'hanno detto, è il segnale più chiaro che esista.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROBLEM — AGITAZIONE ══════ -->
+<section class="section section--white" id="problema">
+  <div class="container text-center">
+    <div class="fade-up">
+      <h2 class="section-headline">Ignorarlo non lo fa passare.<br>Lo fa peggiorare.</h2>
+    </div>
+    <div class="problem-body fade-up" style="transition-delay:0.1s">
+      <p style="margin-bottom:16px;">
+        Il bruxismo non si risolve da solo. Ogni notte i tuoi denti sopportano una pressione fino a <strong>80 kg per centimetro quadrato</strong>. È come se qualcuno schiacciasse i tuoi denti con un morsetto — per ore, ogni notte.
+      </p>
+      <p style="margin-bottom:16px;">
+        Col tempo lo smalto si consuma, i denti si scheggiano, la mandibola si infiamma. I danni sono lenti, silenziosi e <strong>irreversibili</strong>. Quando te ne accorgi, il conto per ripararli è già salito a migliaia di euro.
+      </p>
+      <p>
+        La buona notizia? <strong>Un bite su misura ferma tutto questo.</strong> Protegge i denti, rilassa la mandibola, e ti restituisce un sonno senza dolore. Serve solo il primo passo: una visita.
+      </p>
+    </div>
+
+    <div style="margin:0 auto 48px;max-width:720px;border-radius:16px;overflow:hidden;" class="fade-up">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&q=80&fit=crop&crop=center" alt="Visita dentistica specialistica" style="width:100%;height:280px;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- ══════ SOLUTION — COME FUNZIONA IL BITE ══════ -->
+<section class="section section--mint" id="soluzione">
+  <div class="container text-center">
+    <div class="fade-up">
+      <div class="badge">La soluzione</div>
+      <h2 class="section-headline">Il bite su misura: semplice, invisibile, efficace.</h2>
+    </div>
+    <div class="cards-grid fade-up" style="transition-delay:0.1s">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h4>Visita Specialistica</h4>
+        <p>Analizziamo la tua occlusione, lo stato dei denti e dell'articolazione mandibolare. Capiamo l'origine del problema.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h4>Impronta Individuale</h4>
+        <p>Prendiamo l'impronta precisa della tua arcata. Il bite sarà modellato esattamente sulla tua bocca — non su una taglia standard.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Protezione Notturna</h4>
+        <p>Il bite assorbe la pressione del digrignamento. I tuoi denti non si toccano più. La mandibola si rilassa. Fine del dolore.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Controlli Periodici</h4>
+        <p>Monitoriamo l'efficacia del bite e lo adattiamo nel tempo. Non ti lasciamo solo dopo la consegna.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ COMPARISON — FARMACIA vs SU MISURA ══════ -->
+<section class="section section--white">
+  <div class="container text-center">
+    <div class="fade-up">
+      <h2 class="section-headline">Bite da farmacia vs. Bite su misura.</h2>
+      <p class="section-sub centered">Hai già provato quello da 15€ al supermercato? Ecco perché non ha funzionato.</p>
+    </div>
+    <div class="comparison fade-up" style="transition-delay:0.1s">
+      <div class="comparison-col comparison-col--bad">
+        <h4>✗ Bite generico (farmacia)</h4>
+        <ul>
+          <li>Taglia unica, non segue la tua arcata</li>
+          <li>Materiale morbido che si deforma subito</li>
+          <li>Non corregge l'occlusione</li>
+          <li>Può peggiorare il problema mandibolare</li>
+          <li>Nessun controllo medico</li>
+        </ul>
+      </div>
+      <div class="comparison-col comparison-col--good">
+        <h4>✓ Bite su misura (DentalTeam)</h4>
+        <ul>
+          <li>Modellato sulla tua impronta dentale</li>
+          <li>Materiale professionale, durata anni</li>
+          <li>Riequilibra l'occlusione e rilassa la mandibola</li>
+          <li>Progettato dopo diagnosi specialistica</li>
+          <li>Controlli e aggiustamenti inclusi</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CREDIBILITY ══════ -->
+<section class="section section--mint" id="credibilita">
+  <div class="container">
+    <h2 class="section-headline text-center fade-up" style="margin-bottom:48px;">Non siamo nati ieri.<br>E 10.000 pazienti lo confermano.</h2>
+    <div class="stats-grid fade-up" style="transition-delay:0.1s">
+      <div class="stat">
+        <div class="stat-number">+35</div>
+        <div class="stat-label">Anni di Esperienza</div>
+        <div class="stat-desc">Al servizio del tuo sorriso dal 1989</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="40" height="32" rx="4" stroke="#1AAA9E" stroke-width="2.5"/><path d="M24 18v12M18 24h12" stroke="#1AAA9E" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="stat-label">Certificazioni UNI EN</div>
+        <div class="stat-desc">Standard europei di qualità e sicurezza</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">+10k</div>
+        <div class="stat-label">Pazienti Curati</div>
+        <div class="stat-desc">Con serietà, trasparenza e zero sorprese</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 4l4 8 9 1.3-6.5 6.3 1.5 8.9L24 24l-8 4.5 1.5-8.9L11 13.3l9-1.3z" stroke="#1AAA9E" stroke-width="2.5" stroke-linejoin="round"/><rect x="6" y="32" width="36" height="8" rx="2" stroke="#1AAA9E" stroke-width="2"/></svg>
+        </div>
+        <div class="stat-label">Accreditati ARSS</div>
+        <div class="stat-desc">Riconosciuti dal sistema sanitario regionale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ REVIEWS ══════ -->
+<section class="section section--dark" id="recensioni">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="badge" style="background:rgba(26,170,158,0.2)">Recensioni verificate</div>
+      <h2 class="section-headline" style="color:var(--white)">Non crederci sulla parola. Leggili.</h2>
+    </div>
+    <div class="reviews-grid fade-up" style="transition-delay:0.1s">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">R</div>
+          <div><div class="review-name">Raffaele Meschino</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Il mio giudizio è positivo sia per quanto riguarda l'igiene dentale sia per quanto concerne le cure odontoiatriche. Il personale è gentile e preparato.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Stefano Seganfreddo</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Personale preparato e attento, attrezzature di ultima generazione, consigliatissimo!</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">E</div>
+          <div><div class="review-name">Elena Beltramello</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Bravissimi! Medici preparati e le ragazze disponibilissime! Ottimo per tutti quelli che hanno previmedical!</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-avatar">S</div>
+          <div><div class="review-name">Samuele Santagiuliana</div><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text">Molto gentili e disponibili, personale cordiale e molto professionale! Un servizio veramente al top. Dottoressa molto determinata e dettagliata!</p>
+      </div>
+    </div>
+    <div class="google-badge fade-up">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+      Recensioni verificate su Google
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROCESS ══════ -->
+<section class="section section--white" id="processo">
+  <div class="container text-center">
+    <div class="fade-up">
+      <div class="badge">Il percorso</div>
+      <h2 class="section-headline">Dal primo contatto al bite: 4 passi semplici.</h2>
+    </div>
+    <div class="process-steps fade-up" style="transition-delay:0.1s">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Ti richiamiamo</h4>
+        <p>Compili il form, ti contattiamo in giornata per fissare la visita nella sede più comoda.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Visita specialistica</h4>
+        <p>Il dentista analizza occlusione, mandibola e stato dei denti. Diagnosi precisa in 30 minuti.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Preventivo personalizzato</h4>
+        <p>Ricevi un preventivo chiaro e dettagliato. Decidi tu con calma, senza nessuna pressione.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h4>Consegna del bite</h4>
+        <p>In pochi giorni il bite è pronto. Lo provi, lo aggiustiamo. E cominci a dormire senza dolore.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ TEAM ══════ -->
+<section class="section section--mint" id="team">
+  <div class="container">
+    <div class="team-grid fade-up">
+      <div class="team-img">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80&fit=crop&crop=faces" alt="Team odontoiatrico DentalTeam" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="team-content">
+        <h3>Le persone dietro il tuo sorriso.</h3>
+        <p style="margin-bottom:16px;">
+          Siamo odontoiatri, igienisti e assistenti che lavorano fianco a fianco da anni. Non siamo una catena — siamo un team del territorio che conosce i propri pazienti per nome.
+        </p>
+        <p>
+          Per il bite lavoriamo con approccio personalizzato: <strong>prima ascoltiamo i tuoi sintomi, poi proponiamo la soluzione.</strong> Mai il contrario.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ OFFER CTA ══════ -->
+<section class="section section--teal cta-block" id="offerta">
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <h2 class="section-headline" style="color:var(--white)">Ogni notte senza bite è una notte<br>in cui i tuoi denti pagano il conto.</h2>
+      <p class="cta-sub">Prenota la visita specialistica. Ricevi il preventivo su misura.<br>Decidi con calma — senza vincoli, senza pressione.</p>
+      <a href="#top" class="btn btn--large">Prenota la Visita — Ti Richiamiamo Oggi</a>
+      <p class="cta-note">Pagamento anche in comode rate a tasso zero. Posti limitati ogni settimana.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FAQ ══════ -->
+<section class="section section--white" id="faq">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-headline">Domande sul bite? Risposte chiare.</h2>
+    </div>
+    <div class="faq-grid fade-up" style="transition-delay:0.1s">
+      <div class="faq-item">
+        <div class="faq-q">Il bite è scomodo da portare?</div>
+        <p class="faq-a">No. Essendo modellato sulla tua arcata, si adatta perfettamente. I primi 2-3 giorni ti ci abitui, poi non lo senti neanche più.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto costa il bite su misura?</div>
+        <p class="faq-a">Dipende dalla complessità del caso. Per questo facciamo prima una visita specialistica e poi ti forniamo un preventivo personalizzato. Nessuna sorpresa.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Posso pagare a rate?</div>
+        <p class="faq-a">Sì. Offriamo la possibilità di pagare in comode rate a tasso zero. Ne parliamo durante la visita.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Come faccio a sapere se ho il bruxismo?</div>
+        <p class="faq-a">Mal di testa al risveglio, mandibola che scricchiola, denti consumati, partner che sente il digrignamento. Se ti riconosci in almeno uno di questi, vale la pena di un controllo.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Il bite da farmacia non funziona?</div>
+        <p class="faq-a">I bite generici non seguono la tua arcata e possono peggiorare l'occlusione. Un bite professionale su misura è un dispositivo medico progettato sul tuo caso specifico.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quanto dura un bite su misura?</div>
+        <p class="faq-a">Con la corretta manutenzione, diversi anni. Lo controlliamo periodicamente e lo adattiamo se necessario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ LOCATIONS ══════ -->
+<section class="section section--mint" id="sedi">
+  <div class="container">
+    <div class="text-center fade-up">
+      <h2 class="section-headline">Tre ambulatori. Un unico standard.</h2>
+    </div>
+    <div class="locations-grid fade-up" style="transition-delay:0.1s">
+      <div class="location-card">
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1629909615957-be67d954edaf?w=600&q=80&fit=crop" alt="Sede Schio" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="location-info">
+          <h4>Schio — presso CampuSalute</h4>
+          <p>36015 via Milano 29</p>
+          <a href="mailto:schio@ambulatoridentalteam.it">schio@ambulatoridentalteam.it</a>
+          <div class="location-hours">
+            <strong>Orari:</strong><br>
+            <span>Lun.–Ven. 08:30–20:00</span><br>
+            <span>Sab. 08:30–13:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1631248055158-edec7a3c072b?w=600&q=80&fit=crop" alt="Sede Breganze" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="location-info">
+          <h4>Breganze</h4>
+          <p>36042 piazza Autieri 1</p>
+          <a href="mailto:breganze@ambulatoridentalteam.it">breganze@ambulatoridentalteam.it</a>
+          <div class="location-hours">
+            <strong>Orari:</strong><br>
+            <span>Lun.–Ven. 08:30–20:00</span><br>
+            <span>Sab. 08:30–13:30</span>
+          </div>
+        </div>
+      </div>
+      <div class="location-card">
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80&fit=crop" alt="Sede Fara Vicentino" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="location-info">
+          <h4>Fara Vicentino</h4>
+          <p>36030 via Verdi 33</p>
+          <a href="mailto:fara@ambulatoridentalteam.it">fara@ambulatoridentalteam.it</a>
+          <div class="location-hours">
+            <strong>Orari:</strong><br>
+            <span>Lun.–Ven. 08:30–20:00</span><br>
+            <span>Sab. 08:30–13:30</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINAL CTA ══════ -->
+<section class="section section--white cta-block" id="finale">
+  <div class="container">
+    <div class="cta-inner fade-up">
+      <h2 class="section-headline">Stanotte puoi dormire diversamente.</h2>
+      <p class="cta-sub" style="color:var(--gray-700);">Prenota la visita specialistica. Scopri se il bite fa per te.<br>Preventivo personalizzato, senza vincoli.</p>
+      <a href="#top" class="btn btn--large">Prenota la Visita — Ci Vogliono 20 Secondi</a>
+      <p class="cta-note" style="color:var(--gray-500);">Nessun obbligo. Ti richiamiamo oggi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer class="footer">
+  <div class="container">
+    <p style="margin-bottom:6px;">CAMPUSALUTE S.r.l | P.IVA 02802650248 | Via Milano, 29 - 36015 Schio (VI)</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></p>
+  </div>
+</footer>
+
+<!-- ══════ MOBILE STICKY BAR ══════ -->
+<div class="mobile-bar">
+  <div class="mobile-bar-inner">
+    <a href="tel:+393928345388" class="mobile-bar-call">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Chiama Ora
+    </a>
+    <a href="https://wa.me/393928345388?text=Ciao%2C%20vorrei%20informazioni%20sul%20bite%20dentale%20su%20misura" target="_blank" rel="noopener noreferrer" class="mobile-bar-wa">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ══════ SCRIPTS ══════ -->
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
+    btn.style.background = '#158F85';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+
+  document.querySelectorAll('a[href="#top"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('nome').focus(), 600);
+    });
+  });
+</script>
+
+</body>
+</html>
