@@ -1105,9 +1105,31 @@
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+  const GOOGLE_SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwx1cdZuJk_l8hZeJRzUx_8qrm2ei5JHnMkf02dG6ZMphIZSPzwCsD1zKRpSinYc8R9/exec';
+  const GOOGLE_SHEET_SECRET = 'CAMBIA_QUESTA_CHIAVE_SEGRETA';
+
+  function inviaLeadAlFoglioGoogle(lp) {
+    const motivoEl = document.getElementById('motivo') || document.getElementById('sintomo') || document.getElementById('obiettivo');
+    const motivo = motivoEl && motivoEl.options[motivoEl.selectedIndex]
+      ? motivoEl.options[motivoEl.selectedIndex].text.trim()
+      : '';
+    const dataRicezione = new Date().toLocaleString('it-IT', { timeZone: 'Europe/Rome' });
+    const body = new URLSearchParams();
+    body.set('secret', GOOGLE_SHEET_SECRET);
+    body.set('nome', document.getElementById('nome').value.trim());
+    body.set('motivo', motivo);
+    body.set('dataRicezione', dataRicezione);
+    body.set('dataChiamata', '');
+    body.set('tel', document.getElementById('telefono').value.trim());
+    body.set('mail', document.getElementById('email').value.trim());
+    body.set('lp', lp);
+    return fetch(GOOGLE_SHEET_WEBAPP_URL, { method: 'POST', mode: 'no-cors', body: body });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     if (typeof fbq === 'function') fbq('track', 'Lead', {}, { test_event_code: 'TEST48411' });
+    inviaLeadAlFoglioGoogle('Bite');
     const btn = e.target.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
