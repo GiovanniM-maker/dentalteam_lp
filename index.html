@@ -8,6 +8,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4208678736127474');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=4208678736127474&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <style>
     :root {
       --teal: #1AAA9E;
@@ -1172,6 +1189,7 @@
   // Form handler placeholder
   function handleSubmit(e) {
     e.preventDefault();
+    if (typeof fbq === 'function') fbq('track', 'Lead');
     const btn = e.target.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
     btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
@@ -1192,6 +1210,12 @@
       document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
       // Focus on first form field after scroll
       setTimeout(() => document.getElementById('nome').focus(), 600);
+    });
+  });
+
+  document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"]').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (typeof fbq === 'function') fbq('track', 'Contact');
     });
   });
 </script>
