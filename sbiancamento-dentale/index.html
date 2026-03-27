@@ -272,6 +272,51 @@
       margin-top: 12px;
     }
 
+    .form-thanks { text-align: center; padding: 4px 0 0; }
+    .form-thanks[hidden] { display: none !important; }
+    .form-thanks__lead {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--teal-dark);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .form-thanks__sub {
+      font-size: 15px;
+      color: var(--gray-700);
+      margin-bottom: 22px;
+      line-height: 1.55;
+    }
+    .form-thanks__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .form-thanks__actions .btn {
+      width: 100%;
+      padding: 16px 18px;
+      font-size: 16px;
+    }
+    .btn--outline {
+      background: var(--white);
+      color: var(--teal);
+      border: 2px solid var(--teal);
+    }
+    .btn--outline:hover {
+      background: var(--mint-bg);
+      color: var(--teal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(26,170,158,0.15);
+    }
+    .btn--wa {
+      background: #25D366;
+      color: #fff;
+    }
+    .btn--wa:hover {
+      background: #1ebe5d;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    }
+
     /* ══════ FRUSTRATIONS ══════ */
     .frust-grid {
       display: grid;
@@ -629,7 +674,7 @@
     </div>
 
     <div class="hero-form fade-up" style="transition-delay:0.15s">
-      <h3>Prenota la consulenza per lo sbiancamento dentale. Ti chiamiamo noi per fissare l'appuntamento.</h3>
+      <h3 id="heroFormHeading">Prenota la consulenza per lo sbiancamento dentale. Ti chiamiamo noi per fissare l'appuntamento.</h3>
       <form id="leadForm" onsubmit="handleSubmit(event); return false;">
         <div class="form-group">
           <label for="nome">Nome *</label>
@@ -660,6 +705,15 @@
         <button type="submit" class="btn btn--full btn--large">Prenota la Consulenza. Ti Richiamiamo Oggi</button>
         <p class="form-urgency">* Posti limitati ogni settimana</p>
       </form>
+      <div id="leadFormThanks" class="form-thanks" hidden>
+        <p class="form-thanks__lead">Grazie! Abbiamo ricevuto la tua richiesta.</p>
+        <p class="form-thanks__sub">Ti contatteremo al più presto. Nel frattempo puoi fissare subito la visita o scriverci come preferisci.</p>
+        <div class="form-thanks__actions">
+          <a href="#top" class="btn btn--full btn--large form-thanks__book">Prenota subito la tua visita</a>
+          <a href="tel:+393928345388" class="btn btn--full btn--outline">Chiamaci</a>
+          <a href="https://wa.me/393928345388?text=Ciao%2C%20vorrei%20informazioni%20sullo%20sbiancamento%20dentale" class="btn btn--full btn--wa" target="_blank" rel="noopener noreferrer">Scrivici su WhatsApp</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1157,13 +1211,25 @@
       if (!res.ok) {
         throw new Error(data.error || text || 'Errore ' + res.status);
       }
-      btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
-      btn.style.background = '#158F85';
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
+      const formEl = document.getElementById('leadForm');
+      const thanksEl = document.getElementById('leadFormThanks');
+      const headEl = document.getElementById('heroFormHeading');
+      if (formEl && thanksEl) {
+        formEl.setAttribute('hidden', '');
+        if (headEl) headEl.setAttribute('hidden', '');
+        thanksEl.removeAttribute('hidden');
+      } else {
+        btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
+        btn.style.background = '#158F85';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      }
+      btn.disabled = false;
+      btn.textContent = originalText;
+      btn.style.background = '';
     } catch (err) {
       console.error(err);
       btn.textContent = 'Invio non riuscito. Riprova o chiamaci.';
@@ -1179,6 +1245,17 @@
   document.querySelectorAll('a[href="#top"]').forEach(a => {
     a.addEventListener('click', (e) => {
       e.preventDefault();
+      if (a.classList.contains('form-thanks__book')) {
+        const formEl = document.getElementById('leadForm');
+        const thanksEl = document.getElementById('leadFormThanks');
+        const headEl = document.getElementById('heroFormHeading');
+        if (formEl) {
+          formEl.removeAttribute('hidden');
+          formEl.reset();
+        }
+        if (thanksEl) thanksEl.setAttribute('hidden', '');
+        if (headEl) headEl.removeAttribute('hidden');
+      }
       document.getElementById('top').scrollIntoView({ behavior: 'smooth' });
       setTimeout(() => document.getElementById('nome').focus(), 600);
     });
