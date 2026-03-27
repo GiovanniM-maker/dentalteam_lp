@@ -1,34 +1,48 @@
 /**
- * Proxy verso Google Apps Script: evita 401 dal browser e non espone il secret nell'HTML.
- * Variabili ambiente su Vercel: GOOGLE_SHEET_WEBAPP_URL, GOOGLE_SHEET_SECRET
+ * Proxy verso Google Apps Script.
+ * Vercel: GOOGLE_SHEET_WEBAPP_URL, GOOGLE_SHEET_SECRET
+ * Node 18+ (fetch nativo; niente node-fetch).
  */
+function sendJson(res, status, obj) {
+  res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
+  res.end(JSON.stringify(obj));
+}
+
+function parseJsonBody(req) {
+  const raw = req.body;
+  if (raw == null) return {};
+  if (typeof raw === 'object' && !Buffer.isBuffer(raw)) return raw;
+  const s = Buffer.isBuffer(raw) ? raw.toString('utf8') : String(raw);
+  try {
+    return JSON.parse(s || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    return res.status(204).end();
+    res.writeHead(204);
+    return res.end();
   }
   if (req.method !== 'POST') {
-    return res.status(405).json({ ok: false, error: 'Method not allowed' });
+    return sendJson(res, 405, { ok: false, error: 'Method not allowed' });
   }
 
   const url = process.env.GOOGLE_SHEET_WEBAPP_URL;
   const secret = process.env.GOOGLE_SHEET_SECRET;
   if (!url || !secret) {
-    return res.status(500).json({ ok: false, error: 'Server misconfigured: missing env' });
+    return sendJson(res, 500, {
+      ok: false,
+      error: 'Server misconfigured: set GOOGLE_SHEET_WEBAPP_URL and GOOGLE_SHEET_SECRET on Vercel',
+    });
   }
 
-  let b = req.body;
-  if (typeof b === 'string') {
-    try {
-      b = JSON.parse(b || '{}');
-    } catch (e) {
-      b = {};
-    }
-  }
-  if (typeof b !== 'object' || b === null) b = {};
+  const b = parseJsonBody(req);
   const params = new URLSearchParams();
   params.set('secret', secret);
   params.set('nome', String(b.nome || '').trim());
@@ -47,9 +61,12 @@ module.exports = async (req, res) => {
       body: params.toString(),
     });
     const text = await r.text();
-    res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    res.status(r.status).send(text);
+    res.writeHead(r.status, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(text);
   } catch (err) {
-    res.status(502).json({ ok: false, error: String(err && err.message ? err.message : err) });
+    sendJson(res, 502, {
+      ok: false,
+      error: err && err.message ? err.message : String(err),
+    });
   }
 };

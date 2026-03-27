@@ -1,0 +1,7 @@
+{
+  "name": "dental-team-landing",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  }
+}

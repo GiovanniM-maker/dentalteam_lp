@@ -665,7 +665,7 @@
 
     <div class="hero-form fade-up" style="transition-delay: 0.15s">
       <h3>Prenota la visita specialistica.<br>Ti chiamiamo noi per fissare l'appuntamento.</h3>
-      <form id="leadForm" onsubmit="return handleSubmit(event)">
+      <form id="leadForm" onsubmit="handleSubmit(event); return false;">
         <div class="form-group">
           <label for="nome">Nome *</label>
           <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
@@ -1126,20 +1126,40 @@
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    if (typeof fbq === 'function') fbq('track', 'Lead', {}, { test_event_code: 'TEST48411' });
-    inviaLeadAlFoglioGoogle('Bite');
     const btn = e.target.querySelector('button[type="submit"]');
     const originalText = btn.textContent;
-    btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
-    btn.style.background = '#158F85';
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = originalText;
-      btn.style.background = '';
-      btn.disabled = false;
-    }, 4000);
+    btn.textContent = 'Invio in corso…';
+    try {
+      if (typeof fbq === 'function') fbq('track', 'Lead', {}, { test_event_code: 'TEST48411' });
+      const res = await inviaLeadAlFoglioGoogle('Bite');
+      const text = await res.text();
+      let data = {};
+      try {
+        data = JSON.parse(text);
+      } catch (_) {}
+      if (!res.ok) {
+        throw new Error(data.error || text || 'Errore ' + res.status);
+      }
+      btn.textContent = '✓ Ricevuto! Ti richiamiamo a breve.';
+      btn.style.background = '#158F85';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    } catch (err) {
+      console.error(err);
+      btn.textContent = 'Invio non riuscito. Riprova o chiamaci.';
+      btn.style.background = '#b91c1c';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 6000);
+    }
   }
 
   document.querySelectorAll('a[href="#top"]').forEach(a => {
