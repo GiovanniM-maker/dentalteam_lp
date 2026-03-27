@@ -1106,6 +1106,11 @@
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   function inviaLeadAlFoglioGoogle(lp) {
+    const lpValue = (() => {
+      const s = String(lp || '').trim();
+      if (/^newec/i.test(s)) return s;
+      return 'newec' + (s ? '-' + s : '');
+    })();
     const motivoEl = document.getElementById('motivo') || document.getElementById('sintomo') || document.getElementById('obiettivo');
     const motivo = motivoEl && motivoEl.options[motivoEl.selectedIndex]
       ? motivoEl.options[motivoEl.selectedIndex].text.trim()
@@ -1117,7 +1122,7 @@
       dataChiamata: '',
       tel: document.getElementById('telefono').value.trim(),
       mail: document.getElementById('email').value.trim(),
-      lp: lp
+      lp: lpValue
     };
     return fetch('/api/submit-lead', {
       method: 'POST',
