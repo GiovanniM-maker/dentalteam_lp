@@ -18,8 +18,8 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '4208678736127474', {}, { test_event_code: 'TEST48411' });
-  fbq('track', 'PageView', {}, { test_event_code: 'TEST48411' });
+  fbq('init', '4208678736127474');
+  fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=4208678736127474&ev=PageView&noscript=1"
@@ -1138,7 +1138,7 @@
     btn.disabled = true;
     btn.textContent = 'Invio in corso…';
     try {
-      if (typeof fbq === 'function') fbq('track', 'Lead', {}, { test_event_code: 'TEST48411' });
+      if (typeof fbq === 'function') fbq('track', 'Lead');
       const res = await inviaLeadAlFoglioGoogle('Bite');
       const text = await res.text();
       let data = {};
@@ -1177,7 +1177,7 @@
 
   document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"]').forEach((a) => {
     a.addEventListener('click', () => {
-      if (typeof fbq === 'function') fbq('track', 'Contact', {}, { test_event_code: 'TEST48411' });
+      if (typeof fbq === 'function') fbq('track', 'Contact');
     });
   });
 </script>
