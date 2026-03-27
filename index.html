@@ -1194,7 +1194,7 @@
     const payload = {
       nome: document.getElementById('nome').value.trim(),
       motivo: motivo,
-      dataRicezione: new Date().toLocaleString('it-IT', { timeZone: 'Europe/Rome' }),
+      dataRicezione: new Date().toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' }),
       dataChiamata: '',
       tel: document.getElementById('telefono').value.trim(),
       mail: document.getElementById('email').value.trim(),
