@@ -1179,12 +1179,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+  function buildLpValue(lp) {
+    const s = String(lp || '').trim();
+    if (/^newec/i.test(s)) return s;
+    return 'newec' + (s ? '-' + s : '');
+  }
+
   function inviaLeadAlFoglioGoogle(lp) {
-    const lpValue = (() => {
-      const s = String(lp || '').trim();
-      if (/^newec/i.test(s)) return s;
-      return 'newec' + (s ? '-' + s : '');
-    })();
+    const lpValue = buildLpValue(lp);
     const motivoEl = document.getElementById('motivo') || document.getElementById('sintomo') || document.getElementById('obiettivo');
     const motivo = motivoEl && motivoEl.options[motivoEl.selectedIndex]
       ? motivoEl.options[motivoEl.selectedIndex].text.trim()
@@ -1203,6 +1205,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
+  }
+
+  function inviaClickContattoAlFoglio(lpSlug, channel) {
+    const lpValue = buildLpValue(lpSlug) + '-' + channel;
+    const payload = {
+      nome: '',
+      motivo: channel === 'new-call' ? 'Click Chiamata' : 'Click WhatsApp',
+      dataRicezione: new Date().toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' }),
+      dataChiamata: '',
+      tel: '',
+      mail: '',
+      lp: lpValue
+    };
+    return fetch('/api/submit-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      keepalive: true
+    }).catch(() => {});
   }
 
   async function handleSubmit(e) {
@@ -1272,9 +1293,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
-  document.querySelectorAll('a[href^="tel:"], a[href*="wa.me"]').forEach((a) => {
+  document.querySelectorAll('a[href^="tel:"]').forEach((a) => {
     a.addEventListener('click', () => {
       if (typeof fbq === 'function') fbq('track', 'Contact');
+      inviaClickContattoAlFoglio('sbiancamento dentale', 'new-call');
+    });
+  });
+  document.querySelectorAll('a[href*="wa.me"]').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (typeof fbq === 'function') fbq('track', 'Contact');
+      inviaClickContattoAlFoglio('sbiancamento dentale', 'new-whatsapp');
     });
   });
 </script>
