@@ -1231,7 +1231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
     const params = new URLSearchParams();
     params.set('nome', 'Nome Non definito');
-    params.set('motivo', 'Motivo di contatto non definito');
+    params.set('motivo', 'Motivo di contatto non definito — TEST2477');
     params.set('dataRicezione', dataRicezione);
     params.set('dataChiamata', 'Non definita');
     params.set('tel', 'Telefono non definito');
@@ -1314,7 +1314,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   document.querySelectorAll('a[href^="tel:"]').forEach((a) => {
     a.addEventListener('click', async (e) => {
-      if (typeof fbq === 'function') fbq('track', 'Contact');
+      if (typeof fbq === 'function') fbq('track', 'Lead');
       const href = a.getAttribute('href');
       if (!href) return;
       e.preventDefault();
@@ -1326,7 +1326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
   document.querySelectorAll('a[href*="wa.me"]').forEach((a) => {
     a.addEventListener('click', async (e) => {
-      if (typeof fbq === 'function') fbq('track', 'Contact');
+      if (typeof fbq === 'function') fbq('track', 'Lead');
       const href = a.getAttribute('href');
       if (!href) return;
       e.preventDefault();
