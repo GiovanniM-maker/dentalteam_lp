@@ -8,16 +8,75 @@ function sendJson(res, status, obj) {
   res.end(JSON.stringify(obj));
 }
 
-function parseJsonBody(req) {
-  const raw = req.body;
+function parseUrlEncodedString(s) {
+  const o = {};
+  try {
+    new URLSearchParams(s).forEach((v, k) => {
+      o[k] = v;
+    });
+  } catch (_) {}
+  return o;
+}
+
+function parseFromBodyValue(req, raw) {
   if (raw == null) return {};
-  if (typeof raw === 'object' && !Buffer.isBuffer(raw)) return raw;
+  if (typeof raw === 'object' && !Buffer.isBuffer(raw) && !Array.isArray(raw)) return raw;
   const s = Buffer.isBuffer(raw) ? raw.toString('utf8') : String(raw);
+  const ct = (req.headers['content-type'] || '').toLowerCase();
+  if (ct.includes('application/x-www-form-urlencoded')) {
+    return parseUrlEncodedString(s);
+  }
   try {
     return JSON.parse(s || '{}');
   } catch (e) {
     return {};
   }
+}
+
+function parseJsonBody(req) {
+  return parseFromBodyValue(req, req.body);
+}
+
+async function readRequestBodyStream(req) {
+  try {
+    const chunks = [];
+    for await (const chunk of req) {
+      chunks.push(chunk);
+    }
+    if (chunks.length === 0) return {};
+    const text = Buffer.concat(chunks).toString('utf8');
+    if (!text) return {};
+    const ct = (req.headers['content-type'] || '').toLowerCase();
+    if (ct.includes('application/x-www-form-urlencoded')) {
+      return parseUrlEncodedString(text);
+    }
+    if (ct.includes('application/json')) {
+      try {
+        return JSON.parse(text);
+      } catch (_) {
+        return {};
+      }
+    }
+    try {
+      return JSON.parse(text);
+    } catch (_) {
+      return {};
+    }
+  } catch (_) {
+    return {};
+  }
+}
+
+async function getRequestBody(req) {
+  const b = parseJsonBody(req);
+  if (b && typeof b === 'object' && Object.keys(b).length > 0) {
+    return b;
+  }
+  const streamed = await readRequestBodyStream(req);
+  if (streamed && typeof streamed === 'object' && Object.keys(streamed).length > 0) {
+    return streamed;
+  }
+  return b && typeof b === 'object' ? b : {};
 }
 
 module.exports = async (req, res) => {
@@ -42,7 +101,7 @@ module.exports = async (req, res) => {
     });
   }
 
-  const b = parseJsonBody(req);
+  const b = await getRequestBody(req);
   const params = new URLSearchParams();
   params.set('secret', secret);
   params.set('nome', String(b.nome || '').trim());

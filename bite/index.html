@@ -1210,28 +1210,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   function inviaClickContattoAlFoglio(lpSlug, channel) {
     const lpValue = buildLpValue(lpSlug) + '-' + channel;
-    const payload = {
-      nome: '',
-      motivo: channel === 'new-call' ? 'Click Chiamata' : 'Click WhatsApp',
-      dataRicezione: new Date().toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' }),
-      dataChiamata: '',
-      tel: '',
-      mail: '',
-      lp: lpValue
-    };
-    const url = getLeadApiUrl();
-    const body = JSON.stringify(payload);
-    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
-      try {
-        if (navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }))) {
-          return Promise.resolve();
-        }
-      } catch (_) {}
-    }
-    return fetch(url, {
+    const params = new URLSearchParams();
+    params.set('nome', '(click)');
+    params.set('motivo', channel === 'new-call' ? 'Click Chiamata' : 'Click WhatsApp');
+    params.set('dataRicezione', new Date().toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' }));
+    params.set('dataChiamata', '');
+    params.set('tel', '');
+    params.set('mail', '');
+    params.set('lp', lpValue);
+    return fetch(getLeadApiUrl(), {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: params.toString(),
       keepalive: true
     });
   }
@@ -1304,15 +1294,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   document.querySelectorAll('a[href^="tel:"]').forEach((a) => {
-    a.addEventListener('click', () => {
+    a.addEventListener('click', async (e) => {
       if (typeof fbq === 'function') fbq('track', 'Contact');
-      inviaClickContattoAlFoglio('Bite', 'new-call').catch(() => {});
+      const href = a.getAttribute('href');
+      if (!href) return;
+      e.preventDefault();
+      try {
+        await inviaClickContattoAlFoglio('Bite', 'new-call');
+      } catch (_) {}
+      window.location.href = href;
     });
   });
   document.querySelectorAll('a[href*="wa.me"]').forEach((a) => {
-    a.addEventListener('click', () => {
+    a.addEventListener('click', async (e) => {
       if (typeof fbq === 'function') fbq('track', 'Contact');
-      inviaClickContattoAlFoglio('Bite', 'new-whatsapp').catch(() => {});
+      const href = a.getAttribute('href');
+      if (!href) return;
+      e.preventDefault();
+      try {
+        await inviaClickContattoAlFoglio('Bite', 'new-whatsapp');
+      } catch (_) {}
+      window.open(href, '_blank', 'noopener,noreferrer');
     });
   });
 </script>
