@@ -1217,16 +1217,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
 
-  function inviaClickContattoAlFoglio(lpSlug, channel) {
-    const lpValue = buildLpValue(lpSlug) + '-' + channel;
+  function inviaClickContattoAlFoglio(channel) {
+    const lp = channel === 'new-call' ? 'new-call' : 'new-whatsapp';
+    const dataRicezione = new Date().toLocaleString('it-IT', {
+      timeZone: 'Europe/Rome',
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
     const params = new URLSearchParams();
-    params.set('nome', '(click)');
-    params.set('motivo', channel === 'new-call' ? 'Click Chiamata' : 'Click WhatsApp');
-    params.set('dataRicezione', new Date().toLocaleDateString('it-IT', { timeZone: 'Europe/Rome' }));
-    params.set('dataChiamata', '');
-    params.set('tel', '');
-    params.set('mail', '');
-    params.set('lp', lpValue);
+    params.set('nome', 'Nome Non definito');
+    params.set('motivo', 'Motivo di contatto non definito');
+    params.set('dataRicezione', dataRicezione);
+    params.set('dataChiamata', 'Non definita');
+    params.set('tel', 'Telefono non definito');
+    params.set('mail', 'Email non definita');
+    params.set('lp', lp);
     return fetch(getLeadApiUrl(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -1309,7 +1319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!href) return;
       e.preventDefault();
       try {
-        await inviaClickContattoAlFoglio('sbiancamento dentale', 'new-call');
+        await inviaClickContattoAlFoglio('new-call');
       } catch (_) {}
       window.location.href = href;
     });
@@ -1321,7 +1331,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!href) return;
       e.preventDefault();
       try {
-        await inviaClickContattoAlFoglio('sbiancamento dentale', 'new-whatsapp');
+        await inviaClickContattoAlFoglio('new-whatsapp');
       } catch (_) {}
       window.open(href, '_blank', 'noopener,noreferrer');
     });
