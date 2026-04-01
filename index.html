@@ -1251,6 +1251,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+  /** Se il sito è servito senza serverless (es. solo file statici), imposta prima di questo script:
+   *  window.__LEAD_API_URL__ = 'https://TUO-PROGETTO.vercel.app/api/submit-lead';
+   */
+  function getLeadApiUrl() {
+    if (typeof window !== 'undefined' && window.__LEAD_API_URL__) {
+      return String(window.__LEAD_API_URL__).replace(/\/$/, '');
+    }
+    return '/api/submit-lead';
+  }
+
   function buildLpValue(lp) {
     const s = String(lp || '').trim();
     if (/^newec/i.test(s)) return s;
@@ -1272,7 +1282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       mail: document.getElementById('email').value.trim(),
       lp: lpValue
     };
-    return fetch('/api/submit-lead', {
+    return fetch(getLeadApiUrl(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
@@ -1290,12 +1300,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       mail: '',
       lp: lpValue
     };
-    return fetch('/api/submit-lead', {
+    const url = getLeadApiUrl();
+    const body = JSON.stringify(payload);
+    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+      try {
+        if (navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }))) {
+          return Promise.resolve();
+        }
+      } catch (_) {}
+    }
+    return fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
+      body,
       keepalive: true
-    }).catch(() => {});
+    });
   }
 
   async function handleSubmit(e) {
@@ -1369,13 +1388,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   document.querySelectorAll('a[href^="tel:"]').forEach((a) => {
     a.addEventListener('click', () => {
       if (typeof fbq === 'function') fbq('track', 'Contact');
-      inviaClickContattoAlFoglio('principale', 'new-call');
+      inviaClickContattoAlFoglio('principale', 'new-call').catch(() => {});
     });
   });
   document.querySelectorAll('a[href*="wa.me"]').forEach((a) => {
     a.addEventListener('click', () => {
       if (typeof fbq === 'function') fbq('track', 'Contact');
-      inviaClickContattoAlFoglio('principale', 'new-whatsapp');
+      inviaClickContattoAlFoglio('principale', 'new-whatsapp').catch(() => {});
     });
   });
 </script>
